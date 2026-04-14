@@ -1,0 +1,5 @@
+# Git ignore file
+*.log
+.DS_Store
+.gemini/
+tmp/
