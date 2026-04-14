@@ -19,13 +19,13 @@ A minimalist 3D rendering engine built entirely with Bash and AWK. It uses mathe
 |-----|--------|
 | `Up Arrow` | Increase rotation speed |
 | `Down Arrow` | Decrease rotation speed |
-| `Space` / `F` | Toggle between Donut and Sphere |
-| `C` | Cycle through color modes |
-| `Q` | Quit and restore terminal |
+| `Space` / `f` | Toggle between Donut and Sphere |
+| `c` | Cycle through color modes |
+| `q` | Quit and restore terminal |
 
 ## Requirements
 
-- A POSIX-compatible shell (Bash recommended).
+- Bash.
 - `awk` (compatible with gawk, mawk, and nawk).
 - A terminal supporting ANSI escape codes.
 
