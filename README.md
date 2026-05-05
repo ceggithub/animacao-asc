@@ -21,10 +21,11 @@ Motor de renderização 3D minimalista escrito em Bash + AWK. Renderiza formas g
 ## Funcionalidades
 
 - **Renderização 3D suave**: toda a matemática pesada executada pelo AWK
-- **Formas alternáveis**: Toróide (Donut) e Esfera
+- **5 formas geométricas**: Toróide, Esfera, Cilindro, Cone e Cubo — cicláveis em tempo real
 - **4 paletas de cor**: Azul, Verde, Fogo e Roxo — cicláveis em tempo real
 - **3 modos de cor**: Multicolor, Monocromático e Fósforo Verde
 - **Controles em tempo real**: velocidade, forma e cor sem pausar a animação
+- **Barra de status**: exibe a forma atual e atalhos de teclado na última linha
 - **Responsivo**: adapta o frame ao tamanho atual do terminal a cada ciclo
 
 ## Requisitos
@@ -46,7 +47,7 @@ chmod +x animacao_3d.sh
 |---|---|
 | `Seta Cima` | Aumenta velocidade de rotação |
 | `Seta Baixo` | Diminui velocidade de rotação |
-| `Espaço` / `f` | Alterna entre Toróide e Esfera |
+| `Espaço` / `f` | Cicla entre as 5 formas (Toróide → Esfera → Cilindro → Cone → Cubo) |
 | `c` | Cicla entre os modos de cor (Multicolor → Monocromático → Fósforo Verde) |
 | `p` | Cicla entre as paletas de cor (Azul → Verde → Fogo → Roxo) |
 | `q` | Encerra e restaura o terminal |
@@ -61,6 +62,16 @@ chmod +x animacao_3d.sh
 | Roxo | Gradiente do índigo ao branco |
 
 Cada paleta mapeia 12 tons aos 12 níveis de luminância da superfície renderizada.
+
+## Formas disponíveis
+
+| # | Forma | Geometria | Normal de superfície |
+|---|---|---|---|
+| 0 | Toróide | Loop duplo paramétrico sobre tubo e anel | Radial ao tubo |
+| 1 | Esfera | Coordenadas esféricas (φ, θ) | Igual ao ponto (esfera unitária) |
+| 2 | Cilindro | Lateral + tampas planas | Radial (lateral) / axial (tampas) |
+| 3 | Cone | Ápice em y=1, base em y=-1 + tampa | Inclinada 45° (lateral) / axial (base) |
+| 4 | Cubo | 6 faces amostradas em grade | Constante por face (flat shading) |
 
 ## Arquitetura
 
